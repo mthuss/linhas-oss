@@ -10,6 +10,11 @@ export default Styles = StyleSheet.create({
         commonText: {
             color: "black"
         },
+        linhaTitulo: {
+            color: "black",
+            fontWeight: "bold",
+            fontSize: 18
+        },
         container: {
             backgroundColor: "white",
             flex: 1,

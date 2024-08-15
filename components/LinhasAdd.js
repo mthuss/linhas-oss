@@ -1,27 +1,21 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Text, View } from "react-native";
 import { rptrans_api_host, rptrans_get_linhas, showError } from "../common";
-
-async function getLinhas(){
-    try{
-        const linhas = await axios.post(rptrans_api_host + rptrans_get_linhas)
-        // console.warn(linhas["data"]["linhas"]["linha"])
-        const listaLinhas = linhas["data"]["linhas"]["linha"].map(item => ({id_linha: item.id_linha}))
-        return listaLinhas
-    }
-    catch(e)
-    {
-        showError(e)
-    }
-}
+import Styles from "../Styles";
+import Linha from "./Linha";
+import { FlatList } from "react-native-gesture-handler";
+import LinhasContext from "./LinhasContext";
 
 export default LinhasAdd = props => {
-const [linhas, setLinhas] = useState(null)
-    (async () => {console.log(await getLinhas())})()
+    const {state} = useContext(LinhasContext)
+    // console.warn(state.linhas)
     return(
-        <View>
-            <Text>Adicionar Linhas!!!</Text>
+        <View style={Styles.container}>
+            <FlatList data={state.linhas}
+            keyExtractor={item => item["id_linha"]}
+            renderItem={(item) => <Linha item={item["item"]}/>}
+            />
         </View>
     )
 }
