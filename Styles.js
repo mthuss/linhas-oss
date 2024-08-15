@@ -2,7 +2,8 @@ import { StyleSheet } from "react-native";
 
 export const colors = {
     commonText: "black",
-    mainBg: "white"
+    mainBg: "white",
+    accent: "#85a79c",
 }
 
 export default Styles = StyleSheet.create({
@@ -12,6 +13,10 @@ export default Styles = StyleSheet.create({
         container: {
             backgroundColor: "white",
             flex: 1,
+        },
+        header: {
+            backgroundColor: colors.accent
         }
+
 
     })
