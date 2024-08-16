@@ -2,13 +2,18 @@ import { StyleSheet } from "react-native";
 
 export const colors = {
     commonText: "black",
+    fadedText: "#a0a0a0",
     mainBg: "white",
     accent: "#85a79c",
 }
 
 export default Styles = StyleSheet.create({
         commonText: {
-            color: "black"
+            color: colors.commonText
+        },
+        fadedText: {
+            color: colors.fadedText,
+            fontWeight: "bold"
         },
         linhaTitulo: {
             color: "black",
@@ -18,6 +23,11 @@ export default Styles = StyleSheet.create({
         container: {
             backgroundColor: "white",
             flex: 1,
+        },
+        innerContainer: {
+            backgroundColor: "white",
+            flex: 1,
+            margin: 8,
         },
         header: {
             backgroundColor: colors.accent

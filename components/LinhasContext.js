@@ -4,7 +4,7 @@ import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const LinhasContext = createContext({})
-const initialState = {linhas: null, last_updated: null}
+const initialState = {linhas: [], last_updated: null}
 
 const fetchLastUpdated = async () => {
     try{
