@@ -7,9 +7,11 @@ import Linha from "./Linha";
 import { FlatList } from "react-native-gesture-handler";
 import LinhasContext from "./LinhasContext";
 
+
 export default LinhasAdd = props => {
     const {state} = useContext(LinhasContext)
-    // console.warn(state.linhas)
+    // console.warn(Object.keys(state.linhas[0]["itinerarios"]["itinerarios"]["itinerario"]["0"]["horarios"]["horarios"]["horario"]["0"]["horario"]))
+    // console.warn(state.linhas[0]["itinerarios"]["itinerarios"]["itinerario"][0]["horarios"]["horarios"]["horario"][0]["horario"])
     return(
         <View style={Styles.container}>
             <FlatList data={state.linhas}

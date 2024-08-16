@@ -10,7 +10,7 @@ export default App = () => {
     <LinhasProvider>
       <NavigationContainer>
         <SafeAreaView style={Styles.container}>
-          <Tabs />
+          <Tabs/>
         </SafeAreaView>
       </NavigationContainer>
     </LinhasProvider>
