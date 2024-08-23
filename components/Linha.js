@@ -7,14 +7,30 @@ import FavoritesContext from "./FavoritesContext";
 import Icon from "react-native-vector-icons/Ionicons";
 import { isFavorited } from "../common";
 
+function getHorariosPorPeriodo(horarios) {
+    let dotw = moment().day()
+    var periodo
+    switch(dotw){
+        case 0:
+            periodo = 3
+        case 6:
+            periodo = 2
+        default:
+            periodo = 1
+    }
+    return horarios.filter(hor => hor["id_periodo"] == periodo)
+}
+
 function getProximoHorario(item) {
     const currentTime = moment()
     const itinerarios = item["itinerarios"]["itinerarios"]["itinerario"]
     var lista_horarios = []
+    getHorariosPorPeriodo(lista_horarios)
     itinerarios.map(it => {
-        const horario = it["horarios"]["horarios"]["horario"]
-        if(horario)
+        const horario_completo = it["horarios"]["horarios"]["horario"]
+        if(horario_completo)
         {
+            const horario = getHorariosPorPeriodo(horario_completo)
             const idx = horario.findIndex(hor => {
                 const hora = moment(hor["horario"], "HH:mm")
                 return hora >= currentTime

@@ -25,11 +25,11 @@ const LinhasScreen = props => (
     <LinhasStack.Navigator initialRouteName="ListaLinhas">
         <LinhasStack.Screen name="ListaLinhas" component={Linhas}
             options={{
-                headerRight: () => (
-                    <TouchableOpacity style={{marginRight: 16}} onPress={() => {props.navigation.navigate("LinhasAdd")}}>
-                        <Icon name="add-outline" color="black" size={24}/>
-                    </TouchableOpacity>
-                ),
+                // headerRight: () => (
+                //     <TouchableOpacity style={{marginRight: 16}} onPress={() => {props.navigation.navigate("LinhasAdd")}}>
+                //         <Icon name="add-outline" color="black" size={24}/>
+                //     </TouchableOpacity>
+                // ),
                 headerTitle: "Linhas",
                 headerTitleAlign: "center",
                 headerStyle: Styles.header

@@ -19,7 +19,7 @@ export default LinhasMain = () => {
     const { favState, dispatch } = useContext(FavoritesContext)
     const [favorites, setFavoritesEnabled] = useState(true)
     const toggleFavorites = () => setFavoritesEnabled(previousState => !previousState)
-    // console.log(state.linhas)
+    // console.log(state.linhas[0]["itinerarios"]["itinerarios"]["itinerario"][0]["horarios"]["horarios"])
     // console.warn(favState.favorites)
     if (state.linhas.length !== 0)
         return (
