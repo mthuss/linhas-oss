@@ -9,7 +9,7 @@ import LinhasContext from "./LinhasContext";
 import { isFavorited } from "../common";
 import Linha from "./Linha";
 
-export default LinhasMain = () => {
+export default LinhasMain = props => {
     function clearAllData() {
         AsyncStorage.getAllKeys()
             .then(keys => AsyncStorage.multiRemove(keys))
@@ -38,6 +38,7 @@ export default LinhasMain = () => {
                         renderItem={(item) => <Linha item={item["item"]} 
                             onFavorite={() => dispatch({type: "toggleFavorite", payload: item["item"]["id_linha"]})}
                             favorites={favState.favorites}
+                            navigation={props.navigation}
                             />}
                     />
                 </View>

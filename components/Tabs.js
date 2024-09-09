@@ -8,6 +8,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { Button, Text, View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import LinhasAdd from "./LinhasAdd";
+import LinhaInfo from "./LinhaInfo";
 
 const Tab = createBottomTabNavigator();
 const LinhasStack = createStackNavigator();
@@ -41,6 +42,9 @@ const LinhasScreen = props => (
                 headerTitleAlign: "center",
                 headerStyle: Styles.header
             }}/>
+
+        <LinhasStack.Screen name="LinhaInfo" component={LinhaInfo}
+        options={{headerShown:false}}/>
     </LinhasStack.Navigator>
 )
 

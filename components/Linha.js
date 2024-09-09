@@ -44,12 +44,13 @@ function getProximoHorario(item) {
     else return "Não disponível"
 }
 
-export default ({ item, onPress, onFavorite, favorites}) => {
+export default ({ item, onPress, onFavorite, favorites, navigation}) => {
     // const {dispatch} = useContext(FavoritesContext)
     const isFavorite = isFavorited(item["id_linha"], favorites)
     return (
         // <TouchableOpacity style={{borderColor: "#000000", borderWidth: 1, borderRadius: 10, borderStyle: "solid", padding: 16, margin: 8}} onPress={() => dispatch({type: "addFavorite", payload: item.id_linha})}>
-        <TouchableOpacity style={{ borderColor: "#000000", borderWidth: 1, borderRadius: 10, borderStyle: "solid", padding: 16, marginVertical: 8 }} onPress={onPress}>
+        <TouchableOpacity style={{ borderColor: "#000000", borderWidth: 1, borderRadius: 10, borderStyle: "solid", padding: 16, marginVertical: 8 }} 
+        onPress={() => navigation.navigate("LinhaInfo", {payload: item, onFavorite: onFavorite, favorites: favorites})}>
             <View style={{flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
                 <View>
                     <Text style={Styles.linhaTitulo}>{item.linha_logica} - {item.nome_linha}</Text>
